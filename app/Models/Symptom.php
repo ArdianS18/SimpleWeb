@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Level extends Model
+class Symptom extends Model
 {
     use HasFactory;
 
@@ -15,8 +15,8 @@ class Level extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function mies(): HasMany
+    public function patient_syms(): HasMany
     {
-        return $this->hasMany(Mie::class, 'foreign_key', 'local_key');
+        return $this->hasMany(Patient_sym::class, 'foreign_key', 'local_key');
     }
 }
